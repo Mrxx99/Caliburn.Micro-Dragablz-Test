@@ -11,27 +11,16 @@ using WpfApp1.Views;
 
 namespace WpfApp1.ViewModels
 {
-    public class UserControl1ViewModel : Screen, IInterTabClient
+    public class UserControl1ViewModel : Screen
     {
         public UserControl1ViewModel()
         {
-            DisplayName = "1";
+            DisplayName = "a";
         }
 
-        public INewTabHost<Window> GetNewHost(IInterTabClient interTabClient, object partition, TabablzControl source)
+        protected override void OnActivate()
         {
-            var shell = new MainView();
-            shell.Title = this.DisplayName;
-            //shell.InitializeComponent(); // Only required if you don't have ShellView.xaml.cs
-            var vm = IoC.Get<UserControl1ViewModel>();
-
-            ViewModelBinder.Bind(vm, shell, null);
-            return new NewTabHost<MetroWindow>(shell, shell.Items);
-        }
-
-        public TabEmptiedResponse TabEmptiedHandler(TabablzControl tabControl, Window window)
-        {
-            return TabEmptiedResponse.CloseWindowOrLayoutBranch;
+            base.OnActivate();
         }
     }
 }

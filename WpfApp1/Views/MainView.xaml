@@ -20,7 +20,7 @@
                 </DataTemplate>
             </dragablz:TabablzControl.HeaderItemTemplate>
             <dragablz:TabablzControl.InterTabController>
-                <dragablz:InterTabController/>
+                <dragablz:InterTabController InterTabClient="{Binding}" Partition="2AE89D18-F236-4D20-9605-6C03319038E6" />
             </dragablz:TabablzControl.InterTabController>
         </dragablz:TabablzControl>
     </dockablz:Layout>
